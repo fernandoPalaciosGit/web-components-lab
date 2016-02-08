@@ -1,8 +1,8 @@
 {
-  "name": "labs-polymer",
-  "version": "1.0.0",
+  "name": "web-components-lab",
+  "version": "0.1.0",
   "description": "modules and polyfills for web components",
-  "main": "index.js",
+  "main": "dist/polyfills.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
