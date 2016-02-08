@@ -4,7 +4,9 @@
   "description": "modules and polyfills for web components",
   "main": "dist/polyfills.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "grunt npmpublish",
+    "preinstall": "echo \"Run for install bower dependencies\""
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,8 @@
   "dependencies": {
     "underscore": "^1.8.3",
     "webcomponents.js": "^0.7.20"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
   }
 }
