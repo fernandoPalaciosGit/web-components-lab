@@ -2,7 +2,7 @@
 
 #### Load browserified modules
 ```bash
-npm install --save wc-polyfills
+npm install --save web-components-lab
 ```
 
 ```html
