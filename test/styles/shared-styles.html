@@ -1,0 +1,29 @@
+<dom-module id="shared-styles-icon">
+  <template>
+    <style>
+      :host {
+        --icon-fill-color: #fff;
+        --icon-outline-color: #000;
+        --icon-fill-color-danger: #D1634B;
+        --icon-outline-color-danger: #FF0000;
+        --icon-fill-color-soft: #3584E4;
+        --icon-outline-color-soft: #361EF4;
+      }
+
+      iron-icon {
+        fill: var(--icon-fill-color, #000);
+        stroke: var(--icon-outline-color, currentcolor);
+      }
+
+      :host.danger iron-icon{
+        fill: var(--icon-fill-color-danger, #000);
+        stroke: var(--icon-outline-color-danger, currentcolor);
+      }
+
+      :host.soft iron-icon{
+        fill: var(--icon-fill-color-soft, #000);
+        stroke: var(--icon-outline-color-soft, currentcolor);
+      }
+    </style>
+  </template>
+</dom-module>

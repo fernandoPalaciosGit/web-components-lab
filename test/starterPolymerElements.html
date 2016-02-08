@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="load asyncronous web components with lazy load pattern, detect compatibility with browser and use webcomponents.js shim" />
+    <meta name="author" content="Fernando Palacios Landi" />
+    <title>Lazy load Polymer web components</title>
+    <script src="../dist/polyfills.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Lazy load Polymer web components</h1>
+    </header>
+
+    <section id="loader-components">
+    </section>
+
+<script>
+var polymerStarter = new WcPolyfills.PolymerStarter();
+	
+	polymerStarter.setDom('shadow');
+	polymerStarter.setElements([
+		'elements/wcl-icon.html',
+		'elements/wcl-user-profile.html'
+  ]);
+  polymerStarter.load();
+</script>
+</body>
+</html>

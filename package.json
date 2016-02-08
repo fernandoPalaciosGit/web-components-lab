@@ -1,0 +1,28 @@
+{
+  "name": "labs-polymer",
+  "version": "1.0.0",
+  "description": "modules and polyfills for web components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fernandoPalaciosGit/web-components-lab.git"
+  },
+  "keywords": [
+    "polymer",
+    "web components",
+    "polyfill"
+  ],
+  "author": "Fernando Palacios Landi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fernandoPalaciosGit/web-components-lab/issues"
+  },
+  "homepage": "https://github.com/fernandoPalaciosGit/web-components-lab#readme",
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "webcomponents.js": "^0.7.20"
+  }
+}
