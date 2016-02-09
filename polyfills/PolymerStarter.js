@@ -1,54 +1,60 @@
-var POLYFILL = 'node_modules/webcomponentsjs/webcomponents-lite.min.js',
-    DOM_TYPES = ['shady', 'shadow'],
-    _ = require('_');
+(function (d, w) {
+	'use strict';
 
-w.PolymerStarter = function (domType) {
-  this.elements = [];
-	this.domType = this.setDom(domType || '');
-};
+	var POLYFILL = 'node_modules/webcomponentsjs/webcomponents-lite.min.js',
+		DOM_TYPES = ['shady', 'shadow'],
+		_ = require('_');
 
-w.PolymerStarter.setDom = function(domType) {
-	var dom = _.indexOf(DOM_TYPES, _.toLowerCase(domType)) !== -1 ? domType : DOM_TYPES[0];
-	this.domType = dom;
-};
+	var PolymerStarter = function (domType) {
+		this.elements = [];
+		this.domType = this.setDom(domType || '');
+	};
 
-w.PolymerStarter.prototype.load = function () {
-  if (!this.isSuported) {
-    this.loadPolyfillPolymer();
+	PolymerStarter.setDom = function(domType) {
+		var dom = _.indexOf(DOM_TYPES, _.toLowerCase(domType)) !== -1 ? domType : DOM_TYPES[0];
+		this.domType = dom;
+	};
 
-  } else {
-    this.loadLazyPolymer();
-  }
-};
+	PolymerStarter.prototype.load = function () {
+		if (!this.isSuported) {
+			this.loadPolyfillPolymer();
 
-w.PolymerStarter.prototype.isSuported = function () {
-  return 'registerElement' in d &&
-    'import' in d.createElement('link') &&
-    'content' in d.createElement('template');
-};
+		} else {
+			this.loadLazyPolymer();
+		}
+	};
 
-w.PolymerStarter.prototype.loadPolyfillPolymer = function () {
-  var wcPoly = d.createElement('script');
-  wcPoly.src = POLYFILL;
-  wcPoly.onload = this.loadLazyPolymer;
-  d.head.appendChild(wcPoly);
-};
+	PolymerStarter.prototype.isSuported = function () {
+		return 'registerElement' in d &&
+			'import' in d.createElement('link') &&
+			'content' in d.createElement('template');
+	};
 
-w.PolymerStarter.prototype.loadLazyPolymer = function () {
-  // Let's use Shadow DOM if we have it, future implementation.
-  w.Polymer = w.Polymer || {};
-  w.Polymer.dom = this.domType;
+	PolymerStarter.prototype.loadPolyfillPolymer = function () {
+		var wcPoly = d.createElement('script');
+		
+		wcPoly.src = POLYFILL;
+		wcPoly.onload = this.loadLazyPolymer;
+		d.head.appendChild(wcPoly);
+	};
 
-  this.elements.forEach(function(elementURL) {
-    var elImport = document.createElement('link');
-    elImport.rel = 'import';
-    elImport.href = elementURL;
-    document.head.appendChild(elImport);
-  });
-};
+	PolymerStarter.prototype.loadLazyPolymer = function () {
+		// Let's use Shadow DOM if we have it, future implementation.
+		w.Polymer = w.Polymer || {};
+		w.Polymer.dom = this.domType;
 
-w.PolymerStarter.prototype.setElements = function (arrUrlElements) {
-  this.elements = arrUrlElements || [];
-};
+		this.elements.forEach(function(elementURL) {
+			var elImport = document.createElement('link');
+	
+			elImport.rel = 'import';
+			elImport.href = elementURL;
+			document.head.appendChild(elImport);
+		});
+	};
 
-module.exports = PolymerStarter;
+	PolymerStarter.prototype.setElements = function (arrUrlElements) {
+		this.elements = arrUrlElements || [];
+	};
+
+	module.exports = PolymerStarter;
+})(document, window);

@@ -28,6 +28,9 @@
     "webcomponents.js": "^0.7.20"
   },
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.12.0",
+    "grunt-eslint": "^17.3.1",
+    "grunt-jscs": "^2.7.0"
   }
 }
