@@ -1,0 +1,40 @@
+{
+	"documentation": "http://eslint.org/docs/rules",
+  "extends": "eslint:recommended",
+  "rules": {
+    "camelcase": 0,
+    "curly": 2,
+    "brace-style": [2, "1tbs"],
+    "quotes": [2, "single"],
+    "semi": [2, "always"],
+    "space-infix-ops": 2,
+    "space-after-keywords": [2, "always"],
+    "dot-notation": 2,
+    "eqeqeq": [2, "smart"],
+    "yoda": 2,
+    "no-use-before-define": 2,
+    "no-redeclare": 2,
+    "no-inner-declarations": [2, "both"],
+    "no-unused-vars": [2, {
+        "vars": "all",
+        "args": "after-used"
+    }],
+    "no-floating-decimal": 2,
+    "no-spaced-func": 2,
+    "no-extra-parens": 1,
+    "no-warning-comments": [2, {
+      "terms": ["todo", "@", "bug", "fixme", "xxx"],
+      "location": "anywhere"
+    }],
+    "no-underscore-dangle": [2, { "allow": ["_extend"] }],
+    "strict": 1
+  },
+  "globals": {
+    "Promise": true,
+    "_": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
