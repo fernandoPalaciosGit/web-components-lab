@@ -13,7 +13,7 @@ npm install --save web-components-lab
 ```javascript
 var polymerStarter = new WcPolyfills.PolymerStarter();
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	polymerStarter.setDom('shadow');
 	polymerStarter.setElements([
 		'elements/my-awesome-element.html',

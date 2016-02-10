@@ -3,14 +3,14 @@
 
 	var POLYFILL = 'node_modules/webcomponentsjs/webcomponents-lite.min.js',
 		DOM_TYPES = ['shady', 'shadow'],
-		_ = require('_');
+		_ = require('underscore'),
 
-	var PolymerStarter = function (domType) {
-		this.elements = [];
-		this.domType = this.setDom(domType || '');
-	};
+		PolymerStarter = function (domType) {
+			this.elements = [];
+			this.domType = this.setDom(domType || '');
+		};
 
-	PolymerStarter.setDom = function(domType) {
+	PolymerStarter.setDom = function (domType) {
 		var dom = _.indexOf(DOM_TYPES, _.toLowerCase(domType)) !== -1 ? domType : DOM_TYPES[0];
 		this.domType = dom;
 	};
@@ -32,7 +32,7 @@
 
 	PolymerStarter.prototype.loadPolyfillPolymer = function () {
 		var wcPoly = d.createElement('script');
-		
+
 		wcPoly.src = POLYFILL;
 		wcPoly.onload = this.loadLazyPolymer;
 		d.head.appendChild(wcPoly);
@@ -43,9 +43,9 @@
 		w.Polymer = w.Polymer || {};
 		w.Polymer.dom = this.domType;
 
-		this.elements.forEach(function(elementURL) {
+		this.elements.forEach(function (elementURL) {
 			var elImport = document.createElement('link');
-	
+
 			elImport.rel = 'import';
 			elImport.href = elementURL;
 			document.head.appendChild(elImport);

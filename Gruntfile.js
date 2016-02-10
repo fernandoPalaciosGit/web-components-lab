@@ -1,8 +1,15 @@
-module.exports = function(grunt) {
-  grunt.initConfig(require('./tasks/config'));
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jscs');
-  grunt.loadNpmTasks('grunt-eslint');
-  grunt.registerTask('jslint', ['jscs', 'jshint', 'eslint']);
-  grunt.registerTask('npmpublish', [/*'jslint', 'browserify'*/]);
+module.exports = function (grunt) {
+	'use strict';
+
+	var loadTimer = require('time-grunt'),
+			initTasks = require('load-grunt-tasks'),
+			gruntOptions = require('./grunt/config'),
+			taskOptions = gruntOptions.tasks,
+			packagesOptions = gruntOptions.packages,
+			loadConfigs = require('load-grunt-configs')(grunt, packagesOptions);
+
+	loadTimer(grunt);
+	initTasks(grunt, taskOptions);
+	grunt.initConfig(loadConfigs);
+	grunt.loadTasks('./grunt/tasks');
 };

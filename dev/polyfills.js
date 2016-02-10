@@ -1,3 +1,3 @@
 exports.WcPolyfills = {
-	PolymerStarter: require('polyfills/PolymerStarter')
+	PolymerStarter: require('./polyfills/PolymerStarter')
 };
