@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
 	var path = require('path'),
 		taskName = path.basename(module.filename, '.js'),
-		taskList = ['jslint', 'clean:dist', 'browserify:dist'];
+		taskList = ['jslint', 'clean:dist', 'browserify:dist', 'uglify:dist', 'clean:distBundle'];
 
 	grunt.registerTask(taskName, taskList);
 };

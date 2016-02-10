@@ -6,7 +6,7 @@ npm install --save web-components-lab
 ```
 
 ```html
-<script src="node_modules/wc-polyfills/dist/polyfills.js"></script>
+<script src="node_modules/wc-polyfills/dist/polyfills.bundle.js"></script>
 ```
 
 #### Lazy load polymer

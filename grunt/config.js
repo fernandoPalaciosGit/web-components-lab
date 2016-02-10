@@ -17,7 +17,8 @@ exports.packages = {
 			bundleCompile: 'dev/bundle'
 		},
 		dist: {
-			bundleCompile: 'dist'
+			bundleCompile: 'dist',
+			bundleClean: 'dist/!(*.bundle.js)'
 		}
 	}
 };
