@@ -1,25 +1,34 @@
-var routeServers = {
-	starterPolymer: 'test/starterPolymerElements.html',
-	notFound: 'test/notFound.html',
-};
+var express = require('express'),
+	app = express(),
+	serverRequest = process.argv[2],
+	path = require('path'),
+	testPath = path.resolve('test'),
+	routeServers = {
+		starterPolymer: testPath + '/starterPolymerElements.html',
+		notFound: testPath + '/notFound.html'
+	};
 
-var express = require('express')(),
-    http = require('http'),
-    serverRequest = process.argv[2],
-    server = http.createServer(express);
+app.use(express.static(testPath + '/bundle'));
+app.use(express.static(testPath + '/elements'));
+app.use(express.static(testPath + '/styles'));
 
-var httpListen = server.http.listen('9090', function () {
-  console.log('Application running in localhost:9090/' + serverRequest);
+app.get('/' + serverRequest, function (req, res) {
+	'use strict';
+
+	res.status(200);
+	res.sendFile(routeServers[serverRequest]);
 });
 
-server.use(express.static(''));
+app.get('*', function (req, res) {
+	'use strict';
 
-server.get('/' + serverRequest, function(req, res){
-  res.status(200);
-  res.sendFile(routeServers.serverRequest);
+	res.status(404);
+	res.sendFile(routeServers.notFound);
 });
 
-server.get('*', function(req, res){
-  res.status(404);
-  res.sendFile(routeServers.notFound);
+app.listen('9090', function () {
+	'use strict';
+
+	/*eslint no-console: 0*/
+	console.log('Application running in localhost:9090/' + serverRequest);
 });

@@ -24,4 +24,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 ```
 
->Test polyfill: **$grunt server --test:starterPolymer**
+>Test polyfill: **$grunt server --test=starterPolymer**

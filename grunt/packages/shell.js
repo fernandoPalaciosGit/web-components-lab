@@ -1,10 +1,11 @@
 module.exports = {
 	starterPolymer: {
-		command: [
-			'node test/server/http starterPolymer',
-		].join('&&')
+		command: 'node test/server/http starterPolymer'
 	},
 	openChrome: {
-		command: 'google-chrome localhost:9090/<%= grunt.option(\'test\') %>'
+		command: [
+			'googlePath=$(which google-chrome)',
+			'${googlePath} http://localhost:9090\/\"<%= grunt.option(\'test\') %>\"'
+		].join('&&')
 	}
 };
