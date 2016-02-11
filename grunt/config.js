@@ -6,16 +6,16 @@ exports.packages = {
 	jsLinterPaths: [
 		'Gruntfile.js',
 		'dev/**/*.js',
-		'!dev/bundle/**/*.js',
 		'polyfills/**/*.js',
 		'grunt/**/*.js',
-		'test/**/*.js'
+		'test/**/*.js',
+		'!test/bundle/**/*.js'
 	],
 	compileJS: {
 		bundleDir: 'dev',
 		bundleSrc: ['*.js'],
 		dev: {
-			bundleCompile: 'dev/bundle'
+			bundleCompile: 'test/bundle'
 		},
 		dist: {
 			bundleCompile: 'dist',
