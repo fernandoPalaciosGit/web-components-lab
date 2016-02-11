@@ -15,16 +15,40 @@
     </header>
 
     <section id="loader-components">
+			<div>
+				<hhm-icon data-type="polymer"></hhm-icon>
+				<hhm-icon data-type="polymer" class="danger"></hhm-icon>
+				<hhm-icon data-type="star" class="soft"></hhm-icon>
+			</div>
+
+			<div>
+			<hhm-user-profile class="soft"
+				data-name="Paquito" data-career="engineering"
+				data-born="11/12/1954" data-city="Cancun">
+			</hhm-user-profile>
+
+			<hhm-user-profile class="danger"
+				data-name="Tommi" data-career="repairman athens"
+				data-born="11/12/1964" data-city="Boston">
+			</hhm-user-profile>
+			</div>
     </section>
+
+    <footer>
+      <small>© Code and documentation copyright 2015, Fernando Palacios Landi</small>
+    </footer>
+
 <script>
 var polymerStarter = new WcPolyfills.PolymerStarter();
 
+document.addEventListener('DOMContentLoaded', function () {
 	polymerStarter.setDom('shadow');
 	polymerStarter.setElements([
 		'elements/wcl-icon.html',
 		'elements/wcl-user-profile.html'
-  ]);
-  polymerStarter.load();
+	]);
+	polymerStarter.load();
+});
 </script>
 </body>
 </html>

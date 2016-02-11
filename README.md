@@ -1,6 +1,7 @@
 ## Polymer Labs
+A lot of Dev tools for Web components
 
-#### Load browserified modules
+#### Installation
 ```bash
 npm install --save web-components-lab
 ```
@@ -9,7 +10,7 @@ npm install --save web-components-lab
 <script src="node_modules/wc-polyfills/dist/polyfills.bundle.js"></script>
 ```
 
-#### Lazy load polymer
+#### 1. Lazy load polymer
 ```javascript
 var polymerStarter = new WcPolyfills.PolymerStarter();
 
@@ -22,3 +23,5 @@ document.addEventListener('DOMContentLoaded', function () {
 	polymerStarter.load();
 });
 ```
+
+>Test polyfill: **$grunt server --test:starterPolymer**
