@@ -1,6 +1,6 @@
 module.exports = {
 	options: {
-		jshintrc: '.jshintrc',
+		jshintrc: '<%= config.runtimePath %>/.jshintrc',
 		reporter: require('jshint-stylish')
 	},
 	dist: '<%= jsLinterPaths %>'

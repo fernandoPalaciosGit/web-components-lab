@@ -1,6 +1,7 @@
 exports.packages = {
 	config: {
-		src: 'grunt/packages/*.js'
+		src: 'grunt/packages/*.js',
+		runtimePath: 'grunt/runtime-config'
 	},
 	jsLinterPaths: [
 		'Gruntfile.js',

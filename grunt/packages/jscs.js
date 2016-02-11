@@ -1,12 +1,12 @@
 module.exports = {
 	options: {
-		config: '.jscsrc',
+		config: '<%= config.runtimePath %>/.jscsrc',
 		verbose: false,
 		fix: false
 	},
 	dist: {
-		files: {
+		files: [{
 			src: '<%= jsLinterPaths %>'
-		}
+		}]
 	}
 };

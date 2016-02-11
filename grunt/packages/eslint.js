@@ -1,9 +1,11 @@
 module.exports = {
 	options: {
-		configFile: '.eslintrc',
+		configFile: '<%= config.runtimePath %>/.eslintrc',
 		format: require('eslint-tap')
 	},
 	dist: {
-		src: '<%= jsLinterPaths %>'
+		files: [{
+			src: '<%= jsLinterPaths %>'
+		}]
 	}
 };
