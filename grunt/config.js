@@ -9,7 +9,8 @@ exports.packages = {
 		'polyfills/**/*.js',
 		'grunt/**/*.js',
 		'test/**/*.js',
-		'!test/bundle/**/*.js'
+		'!test/bundle/**',
+		'!test/bower_components/**'
 	],
 	compileJS: {
 		bundleDir: 'dev',
