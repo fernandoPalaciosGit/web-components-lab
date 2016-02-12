@@ -15,7 +15,7 @@ npm install --save web-components-lab
 var polymerStarter = new WcPolyfills.PolymerStarter();
 
 document.addEventListener('DOMContentLoaded', function () {
-	polymerStarter.setDom('shadow');
+	polymerStarter.setDom('shadow'); // 'shady' by default
 	polymerStarter.setElements([
 		'elements/my-awesome-element.html',
 		'elements/rock-in-element.html'
@@ -24,4 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 ```
 
->Test polyfill: **$grunt server --test=starterPolymer**
+>**Test polyfill**
+
+>**$**bower install & grunt server --test=starterPolymer

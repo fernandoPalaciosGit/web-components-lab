@@ -10,8 +10,8 @@
 			this.domType = this.setDom(domType || '');
 		};
 
-	PolymerStarter.setDom = function (domType) {
-		var dom = _.indexOf(DOM_TYPES, _.toLowerCase(domType)) !== -1 ? domType : DOM_TYPES[0];
+	PolymerStarter.prototype.setDom = function (domType) {
+		var dom = _.indexOf(DOM_TYPES, domType.toLowerCase()) !== -1 ? domType : DOM_TYPES[0];
 		this.domType = dom;
 	};
 

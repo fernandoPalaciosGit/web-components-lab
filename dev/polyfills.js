@@ -1,3 +1,3 @@
-exports.WcPolyfills = {
+window.WcPolyfills = {
 	PolymerStarter: require('./polyfills/PolymerStarter')
 };
