@@ -1,6 +1,6 @@
 {
   "name": "web-components-lab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "modules and polyfills for web components",
   "main": "dist/polyfills.js",
   "scripts": {
