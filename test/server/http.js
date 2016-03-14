@@ -5,7 +5,8 @@ var express = require('express'),
 	swig = require('swig'),
 	isProduction = process.env.NODE_ENV === 'production',
 	routeTemplates = {
-		starterPolymer: 'starterPolymerElements',
+		starterPolymer: 'testPolymerStarter',
+		timePerformance: 'testTimePerformance',
 		notFound: 'notFound'
 	};
 

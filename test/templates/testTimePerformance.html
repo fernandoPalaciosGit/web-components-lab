@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="Fernando Palacios Landi" />
+    <title>Speed Timer Code Performance</title>
+    <script src="polyfills.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Speed Timer Code Performance</h1>
+    </header>
+
+    <footer>
+      <small>© Code and documentation copyright 2016, Fernando Palacios Landi</small>
+    </footer>
+
+<script>
+var createWeaponHero = function (heroName, position) {
+			this.name = heroName;
+			this.position = position;
+		},
+
+		tester = new TimePerformance(10000),
+		testCreateWeaponHero = function () {
+			var firstRegimentNovice = ['Kink Kong', 'Hercules', 'Atila', 'Sandocan'],
+					firstRegimentKnights = [],
+					newKnight = {};
+
+			for (var i = 0, len = firstRegimentNovice.length; i < len; i++) {
+				newKnight = new createWeaponHero(firstRegimentNovice[i], 'King');
+				firstRegimentKnights.push(newKnight);
+			}
+		};
+
+// @Test
+tester.setImplementation(testCreateWeaponHero, null);
+tester.startPerformance();
+console.log(tester.printPerformance());
+
+// @Test
+tester.startTimer();
+testCreateWeaponHero();
+tester.endTimer();
+</script>
+</body>
+</html>
