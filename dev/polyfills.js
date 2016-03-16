@@ -1,5 +1,5 @@
 window.WcPolyfills = {
 	PolymerStarter: require('./polyfills/PolymerStarter'),
-	DomUtils: require('./polyfills/DomUtils'),
+	Client: require('./polyfills/Client'),
 	TimePerformance: require('./polyfills/TimePerformance')
 };
